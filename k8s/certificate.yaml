@@ -1,0 +1,18 @@
+apiVersion: cert-manager.io/v1alpha2
+kind: Certificate
+metadata:
+  name: multi-k8s-edryan-co-tls
+spec:
+  secretName: multi-k8s-edryan-co
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  commonName: multi-k8s.edryan.co
+  dnsNames:
+    - multi-k8s.edryan.co
+  acme:
+    config:
+      - http01:
+          ingressClass: nginx
+        domains:
+          - multi-k8s.edryan.co
