@@ -9,5 +9,5 @@ docker push edwardjryanjr/multi-worker:latest
 docker push edwardjryanjr/multi-worker:$SHA
 kubectl apply -f k8s
 kubectl set image deployments/server-deployment server=edwardjryanjr/multi-server:$SHA
-kubectl set image deployments/client-deployment server=edwardjryanjr/multi-client:$SHA
-kubectl set image deployments/worker-deployment server=edwardjryanjr/multi-worker:$SHA
+kubectl set image deployments/client-deployment client=edwardjryanjr/multi-client:$SHA
+kubectl set image deployments/worker-deployment worker=edwardjryanjr/multi-worker:$SHA
